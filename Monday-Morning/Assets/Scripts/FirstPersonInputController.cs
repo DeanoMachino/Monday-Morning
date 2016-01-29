@@ -19,12 +19,12 @@ public class FirstPersonInputController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		// Get the input vector from kayboard or analog stick
+		// Get the input vector from keyboard or analogue stick
 		Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 		
 		if (directionVector != Vector3.zero)
 		{
-			// Get the length of the directon vector and then normalize it
+			// Get the length of the direction vector and then normalize it
 			// Dividing by the length is cheaper than normalizing when we already have the length anyway
 			float directionLength = directionVector.magnitude;
 			directionVector = directionVector / directionLength;
