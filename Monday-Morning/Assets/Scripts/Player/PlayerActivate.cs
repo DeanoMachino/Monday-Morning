@@ -3,12 +3,11 @@ using System.Collections;
 
 public class PlayerActivate : MonoBehaviour {
 
-	public GameObject player;		// Player
+	public GameObject player;		// Player GameObject
 			
 	public float activateRange;		// Range of player activation
 
 	private Ray ray;				// Ray cast from player
-	private Vector3 forward;		// Forward direction for ray
 	private RaycastHit hit;			// Information for object hit by ray
 	private new Camera camera;		// Player camera
 	private Transform select;		// Object selected by ravcast
@@ -16,11 +15,9 @@ public class PlayerActivate : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		//player = GameObject.FindGameObjectWithTag("Player");
 		camera = Camera.main;
 		ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0)); // Ray from centre of screen
-		activateRange = 3;
-		forward = transform.TransformDirection (Vector3.forward);
+		activateRange = 2;
 	}
 	
 	// Update is called once per frame
@@ -36,6 +33,8 @@ public class PlayerActivate : MonoBehaviour {
 			// If the raycast hits then activate the hit object
 			if(Physics.Raycast(ray, out hit, activateRange))
 			{
+				// Add logic to check which object type has been hit using tags (Door, pickup or other)
+
 				// Activate selected object here
 				Debug.Log("Object activated");
 			}
