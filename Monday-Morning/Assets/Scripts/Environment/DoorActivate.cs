@@ -34,16 +34,12 @@ public class DoorActivate : MonoBehaviour {
 		// Check if door is open/closed and apply appropriate rotation
 		if (doorOpen == false)
 		{
-			Debug.Log ("Door opening");
-
 			// Rotate around pivot point to open position
 			this.transform.RotateAround (pivotPoint.transform.position, Vector3.up, rotationVelocity);
 			rotationCounter += rotationVelocity;
 		}
 		else if (doorOpen == true)
 		{
-			Debug.Log ("Door closing");
-
 			// Rotate around pivot point back to closed position
 			this.transform.RotateAround (pivotPoint.transform.position, Vector3.up, -rotationVelocity);
 			rotationCounter += rotationVelocity;
@@ -66,7 +62,7 @@ public class DoorActivate : MonoBehaviour {
 		doorRotating = true;
 	}
 
-	// Called once per frame
+	// Update is called once per frame
 	void Update()
 	{
 		// Remove this key press when activate is finished - Stuart
