@@ -22,6 +22,14 @@ public class PlayerActivate : MonoBehaviour {
 					label = "Cube";
 					// Show text tooltip
 					break;
+				case "CerealBox":
+					label = "CerealBox";
+					// Show text tooltip
+					break;
+				case "Bowl":
+					label = "Bowl";
+					// Show text tooltip
+					break;
 				default:
 					Debug.Log ("Tag hit: " + hit.collider.tag);
 					break;
@@ -31,11 +39,60 @@ public class PlayerActivate : MonoBehaviour {
 				ActivateObject(hit);
 			}
 
+			// TEMP -- Testing removing objects from the inventory
+			if (Input.GetKeyDown ("q")) {
+				InventoryManager.Instance.SendMessage("ItemDropped", ItemType.CEREAL_BOX, SendMessageOptions.DontRequireReceiver);
+			}
+
 		}
 	}
+	/* 
+
+Can be collected for inventory:
+- Cereal Box
+- Bowl
+- Milk
+- Spoon
+- Spanner
+- Towel
+- Bundle of clothes
+- Work outfit (e.g. suit)
+- Keys
+
+	 */
+	
 
 	void ActivateObject(RaycastHit hit){
-
+		switch (hit.collider.tag) {
+		case "CerealBox":
+			Debug.Log ("ActivateObject -- CerealBox");
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.CEREAL_BOX, SendMessageOptions.DontRequireReceiver);
+			break;
+		case "Bowl":
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.BOWL, SendMessageOptions.DontRequireReceiver);
+			break;
+		case "Milk":
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.MILK, SendMessageOptions.DontRequireReceiver);
+			break;
+		case "Spoon":
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.SPOON, SendMessageOptions.DontRequireReceiver);
+			break;
+		case "Spanner":
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.SPANNER, SendMessageOptions.DontRequireReceiver);
+			break;
+		case "Towel":
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.TOWEL, SendMessageOptions.DontRequireReceiver);
+			break;
+		case "BundleOfClothes":
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.BUNDLE_OF_CLOTHES, SendMessageOptions.DontRequireReceiver);
+			break;
+		case "WorkOutfit":
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.WORK_OUTFIT, SendMessageOptions.DontRequireReceiver);
+			break;
+		case "Key":
+			InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.KEY, SendMessageOptions.DontRequireReceiver);
+			break;
+		}
 	}
 
 	void OnGUI(){

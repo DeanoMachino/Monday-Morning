@@ -31,7 +31,6 @@ TagManager:
   - KeyHolder
   - Key
   - Cube
-  - Trigger
   layers:
   - Default
   - TransparentFX
