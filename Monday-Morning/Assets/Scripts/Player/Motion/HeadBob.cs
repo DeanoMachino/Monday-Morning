@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[AddComponentMenu("Character/Head Bob")]
+[AddComponentMenu("Player/Motion/Head Bob")]
 
 public class HeadBob: MonoBehaviour {
 	private float timer = 0.0f;

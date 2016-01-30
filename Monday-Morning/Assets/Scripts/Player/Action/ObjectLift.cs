@@ -8,6 +8,8 @@
 using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Player/Action/Object Lift")]
+
 public class ObjectLift : MonoBehaviour
 {
 	// Use this for initialization

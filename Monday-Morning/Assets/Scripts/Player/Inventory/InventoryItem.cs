@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(InventoryManager))]
-[AddComponentMenu("Inventory/Inventory Item")]
+[AddComponentMenu("Player/Inventory/Inventory Item")]
 
 public class InventoryItem : MonoBehaviour {
 
