@@ -30,6 +30,8 @@ TagManager:
   - KitchenSink
   - KeyHolder
   - Key
+  - Cube
+  - Trigger
   layers:
   - Default
   - TransparentFX
