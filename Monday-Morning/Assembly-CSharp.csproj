@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\GUI\ToggleCursor.cs" />
      <Compile Include="Assets\Scripts\Player\Action\ObjectLift.cs" />
      <Compile Include="Assets\Scripts\Player\Action\PlayerActivate.cs" />
+     <Compile Include="Assets\Scripts\Player\Inventory\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\Player\Motion\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Player\Motion\FirstPersonInputController.cs" />

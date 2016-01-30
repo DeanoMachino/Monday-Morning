@@ -17,23 +17,9 @@ public class PlayerActivate : MonoBehaviour {
 		if (Physics.Raycast (activationRay, out hit, range)) {
 			visible = true;
 			label = "";
-			switch(hit.collider.tag){
-				case "Cube":
-					label = "Cube";
-					// Show text tooltip
-					break;
-				case "CerealBox":
-					label = "CerealBox";
-					// Show text tooltip
-					break;
-				case "Bowl":
-					label = "Bowl";
-					// Show text tooltip
-					break;
-				default:
-					Debug.Log ("Tag hit: " + hit.collider.tag);
-					break;
-			}
+
+			SetTooltipLabel(hit);
+
 			if (Input.GetButtonDown ("Action")) {
 				Debug.Log ("Object Hit");
 				ActivateObject(hit);
@@ -60,6 +46,87 @@ Can be collected for inventory:
 - Keys
 
 	 */
+
+	void SetTooltipLabel(RaycastHit hit){
+		switch(hit.collider.tag){
+			// INVENTORY ITEMS //
+			// =============== //
+		case "CerealBox":
+			label = "Take Box of Cereal";
+			break;
+		case "Bowl":
+			label = "Take Bowl";
+			break;
+		case "Milk":
+			label = "Take Milk";
+			break;
+		case "Spoon":
+			label = "Take Spoon";
+			break;
+		case "Spanner":
+			label = "Take Spanner";
+			break;
+		case "TowelDirty":
+			label = "Take Dirty Towel";
+			break;
+		case "TowelClean":
+			label = "Take Clean Towel";
+			break;
+		case "BundleOfClothes":
+			label = "Take Bundle of Clothes";
+			break;
+		case "Key":
+			label = "Take Key";
+			break;
+
+			// INTERACTIVE ITEMS //
+			// ================= //
+		case "KitchenSink":
+			// IF DISHES NOT DONE
+				// SET LABEL TO "Wash dirty dishes"
+			break;
+		case "DryingRack":
+			// IF DISHES TO BE PUT AWAY
+				// SET LABEL TO "Put away dishes"
+			break;
+		case "KitchenTable":
+			// IF HOLDING BOWL
+				// SET LABEL TO "Place bowl"
+			// ELSE IF HOLDING SPOON
+				// SET LABEL TO "Place spoon"
+			// ELSE IF BOWL AND SPOON PLACED
+			break;
+		case "WashingMachine":
+			// IF HOLDING BUNDLE OF CLOTHES
+				// SET LABEL TO "Wash dirty clothes"
+			// ELSE IF HOLDING DIRTY TOWEL
+				// SET LABEL TO "Wash dirty towel"
+			break;
+		case "WorkOutfit":
+			// IF NOT HAD SHOWER YET
+				// SET LABEL TO "You need to take a shower first
+			// IF HAD SHOWER
+				// SET LABEL TO "Get dressed for work"
+			break;
+		case "ShowerUnit":
+			// IF SHOWER IS BROKEN AND NOT HOLDING SPANNER
+				// SET LABEL TO "The shower is broken"
+			// IF SHOWER IS BROKEN AND HOLDING SPANNER
+				// SET LABEL TO "Fix the shower"
+			// IF SHOWER IS FIXED
+				// SET LABEL TO "Take a shower
+
+			break;
+			// DEFAULT ITEMS //
+			// ============= //
+		case "Untagged":
+			label = "UNTAGGED ITEM";
+			break;
+		default:
+			Debug.Log ("Tag hit: " + hit.collider.tag);
+			break;
+		}
+	}
 	
 
 	void ActivateObject(RaycastHit hit){
@@ -97,7 +164,7 @@ Can be collected for inventory:
 
 	void OnGUI(){
 		if (visible && label != "") {
-			GUI.Box(new Rect(Screen.width / 3, Screen.height * 0.6f, Screen.width / 3, Screen.height * 0.05f), label);
+			GUI.Box(new Rect(Screen.width / 3, Screen.height * 0.6f, Screen.width / 3, Screen.height * 0.04f), label);
 		}
 	}
 }
