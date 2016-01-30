@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 // Require a character controller to be attached to the same game object
 [RequireComponent(typeof(CharacterMotor))]
-[AddComponentMenu("Character/FPS Input Controller")]
+[AddComponentMenu("Player/Motion/First Person Input Controller")]
 
 public class FirstPersonInputController : MonoBehaviour
 {

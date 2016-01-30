@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("GUI/Toggle Cursor")]
+
 public class ToggleCursor : MonoBehaviour {
 
 	public bool activated = false;

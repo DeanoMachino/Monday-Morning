@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(InventoryManager))]
-[AddComponentMenu("Inventory/Inventory Item")]
+[AddComponentMenu("Player/Inventory/Inventory Item")]
 
 public class InventoryItem : MonoBehaviour {
 
@@ -18,5 +18,13 @@ public class InventoryItem : MonoBehaviour {
 
 public enum ItemType {
 	NONE,
-	HAMMER
+	CEREAL_BOX,
+	BOWL,
+	MILK,
+	SPOON,
+	SPANNER,
+	TOWEL,
+	BUNDLE_OF_CLOTHES,
+	WORK_OUTFIT,
+	KEY
 }

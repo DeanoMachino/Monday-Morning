@@ -39,6 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8304aeb1aacdf3c43be7a6cb0da389c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryBar: {fileID: 152800, guid: c2aacf46b85512a449851c336a877dd8, type: 2}
+  inventorySpaces: 9
+  itemList: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -58,6 +61,14 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: inventorySpaces
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 152800, guid: c2aacf46b85512a449851c336a877dd8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134036}

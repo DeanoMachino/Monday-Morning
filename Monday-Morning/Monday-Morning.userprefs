@@ -1,13 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Inventory\InventoryManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Action\PlayerActivate.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\PlayerActivate.cs" Line="77" Column="1" />
-      <File FileName="Assets\Scripts\UI\GUIWatermark.cs" Line="3" Column="34" />
-      <File FileName="Assets\Scripts\UI\GUICrosshair.cs" Line="5" Column="1" />
-      <File FileName="Assets\Scripts\Environment\DoorActivate.cs" Line="10" Column="29" />
-      <File FileName="Assets\Scripts\UI\ToggleCursor.cs" Line="11" Column="27" />
-      <File FileName="Assets\Scripts\Player\Inventory\InventoryManager.cs" Line="17" Column="21" />
+      <File FileName="Assets\Scripts\Player\Inventory\InventoryItem.cs" Line="21" Column="13" />
+      <File FileName="Assets\Scripts\Player\Action\PlayerActivate.cs" Line="22" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
