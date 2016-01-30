@@ -5,7 +5,31 @@ TagManager:
   serializedVersion: 2
   tags:
   - Environment
-  - New Tag
+  - ShowerUnit
+  - ShowerHead
+  - ShowerTray
+  - TowelHandle
+  - Towel
+  - ShowerMat
+  - Spanner
+  - ChestOfDrawers
+  - Wardrobe
+  - DeskWithDrawers
+  - BundleOfClothes
+  - WorkOutfit
+  - WashingMachine
+  - CerealBox
+  - KitchenCupboards
+  - KitchenDrawers
+  - Fridge
+  - Bowl
+  - Milk
+  - KitchenTable
+  - KitchenWorktop
+  - Spoon
+  - KitchenSink
+  - KeyHolder
+  - Key
   layers:
   - Default
   - TransparentFX
