@@ -46,14 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Environment\DoorActivate.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\Player\Motion\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Player\Motion\FirstPersonInputController.cs" />
      <Compile Include="Assets\Scripts\Player\Motion\HeadBob.cs" />
      <Compile Include="Assets\Scripts\Player\Motion\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\Player\ObjectLift.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerActivate.cs" />
      <Compile Include="Assets\Scripts\UI\GUICrosshair.cs" />
      <Compile Include="Assets\Scripts\UI\GUIWatermark.cs" />
+     <Compile Include="Assets\Scripts\UI\ToggleCursor.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

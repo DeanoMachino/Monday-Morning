@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour {
 
+	public GameObject inventoryBar;
 	public int inventorySpaces = 8;
 	public List<InventoryItem> itemList = new List<InventoryItem>();
 	// Use this for initialization
