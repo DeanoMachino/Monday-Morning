@@ -31,6 +31,9 @@ TagManager:
   - KeyHolder
   - Key
   - Cube
+  - BackgroundMusic
+  - Door
+  - GameManager
   layers:
   - Default
   - TransparentFX
