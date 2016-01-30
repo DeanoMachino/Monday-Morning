@@ -15,6 +15,7 @@ GameObject:
   - 143: {fileID: 14381700}
   - 114: {fileID: 11487816}
   - 114: {fileID: 11482044}
+  - 114: {fileID: 11402426}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -207,6 +208,19 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11402426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707833193d892744f91871b5ab283ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 149726}
+  activateRange: 0
 --- !u!114 &11415540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -369,6 +383,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 149726}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 149726}
