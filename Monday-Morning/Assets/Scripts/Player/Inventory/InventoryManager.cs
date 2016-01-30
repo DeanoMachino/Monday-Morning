@@ -7,7 +7,6 @@ using System.Collections.Generic;
 public class InventoryManager : MonoBehaviour {
 
 	public static InventoryManager Instance;
-	public GameObject inventoryBar;
 	public int inventorySpaces = 9;
 	public List<ItemType> itemList;
 

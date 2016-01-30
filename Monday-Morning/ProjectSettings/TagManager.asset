@@ -9,7 +9,7 @@ TagManager:
   - ShowerHead
   - ShowerTray
   - TowelHandle
-  - Towel
+  - TowelClean
   - ShowerMat
   - Spanner
   - ChestOfDrawers
@@ -30,7 +30,7 @@ TagManager:
   - KitchenSink
   - KeyHolder
   - Key
-  - Cube
+  - TowelDirty
   - BackgroundMusic
   - Door
   - GameManager
