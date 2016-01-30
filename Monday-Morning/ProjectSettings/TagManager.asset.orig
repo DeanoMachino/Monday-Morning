@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Environment
+  - ShowerUnit
+  - ShowerHead
+  - ShowerTray
+  - TowelHandle
+  - TowelClean
+  - ShowerMat
+  - Spanner
+  - ChestOfDrawers
+  - Wardrobe
+  - DeskWithDrawers
+  - BundleOfClothes
+  - WorkOutfit
+  - WashingMachine
+  - CerealBox
+  - KitchenCupboards
+  - KitchenDrawers
+  - Fridge
+  - Bowl
+  - Milk
+  - KitchenTable
+  - KitchenWorktop
+  - Spoon
+  - KitchenSink
+  - KeyHolder
+  - Key
+<<<<<<< HEAD
+  - Cube
+  - BackgroundMusic
+  - Door
+  - GameManager
+=======
+  - TowelDirty
+>>>>>>> 9a9a5e665e08971172010e601fa0c2d08967b6d1
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

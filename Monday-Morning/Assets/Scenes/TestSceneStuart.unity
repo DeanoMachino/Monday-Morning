@@ -234,9 +234,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 480351930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b50b4692f5bb94489d1bc6fce846d79, type: 3}
+  m_Script: {fileID: 11500000, guid: e903b106258a0db4a8dc6808103163ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeSpeed: 1.5
 --- !u!1001 &482415668
 Prefab:
   m_ObjectHideFlags: 0

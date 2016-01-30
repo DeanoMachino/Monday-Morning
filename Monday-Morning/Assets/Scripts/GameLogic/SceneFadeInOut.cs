@@ -60,9 +60,7 @@ public class SceneFadeInOut : MonoBehaviour
 	
 	
 	public void EndScene ()
-	{
-		Debug.Log("EndScene activated");
-
+	{		
 		// Make sure the texture is enabled.
 		GetComponent<GUITexture>().enabled = true;
 		
