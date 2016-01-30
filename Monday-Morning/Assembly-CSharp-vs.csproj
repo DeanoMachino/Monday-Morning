@@ -46,10 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CharacterMotor.cs" />
-     <Compile Include="Assets\Scripts\FirstPersonInputController.cs" />
-     <Compile Include="Assets\Scripts\InventoryManager.cs" />
-     <Compile Include="Assets\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\Player\CharacterMotor.cs" />
+     <Compile Include="Assets\Scripts\Player\FirstPersonInputController.cs" />
+     <Compile Include="Assets\Scripts\Player\HeadBob.cs" />
+     <Compile Include="Assets\Scripts\Player\InventoryManager.cs" />
+     <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
