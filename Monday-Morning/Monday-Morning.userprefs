@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Inventory\InventoryItem.cs">
     <Files>
       <File FileName="Assets\Scripts\Player\Inventory\InventoryItem.cs" Line="11" Column="32" />
-      <File FileName="Assets\Scripts\Player\Inventory\InventoryManager.cs" Line="25" Column="28" />
+      <File FileName="Assets\Scripts\Player\Inventory\InventoryManager.cs" Line="5" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
