@@ -10,6 +10,9 @@ public class DoorActivate : MonoBehaviour {
 	private bool doorRotating;		// Holds if door is currently opening or closing, or not
 	private float rotationCounter;	// Counts how far door has opened so far
 	private GameObject pivotPoint;	// Pivot point for rotating door around (Hinges)
+	
+	private AudioSource audio;		// Holds AudioSource
+	private bool audioPlayed;		// Checks if audio has been played so it only plays once (For narration)
 
 	public float doorMaxRotation;	// Sets how far door can open in degrees
 	public float rotationVelocity;	// Velocity value for opening/closing door
@@ -27,21 +30,24 @@ public class DoorActivate : MonoBehaviour {
 		pivotPoint.transform.position = this.transform.position;
 		pivotPoint.transform.parent = this.transform;
 		pivotPoint.transform.localPosition = new Vector3(-0.5f, 0.0f, 0.0f);
+
+		audio = GetComponent<AudioSource>();
+		audioPlayed = false;
 	}
 
-	void Rotate(float rotationVelocity_)
+	void Rotate()
 	{
 		// Check if door is open/closed and apply appropriate rotation
 		if (doorOpen == false)
 		{
 			// Rotate around pivot point to open position
-			this.transform.RotateAround (pivotPoint.transform.position, Vector3.up, rotationVelocity);
+			this.transform.RotateAround (pivotPoint.transform.position, Vector3.up, -rotationVelocity);
 			rotationCounter += rotationVelocity;
 		}
 		else if (doorOpen == true)
 		{
 			// Rotate around pivot point back to closed position
-			this.transform.RotateAround (pivotPoint.transform.position, Vector3.up, -rotationVelocity);
+			this.transform.RotateAround (pivotPoint.transform.position, Vector3.up, rotationVelocity);
 			rotationCounter += rotationVelocity;
 		}
 
@@ -66,15 +72,20 @@ public class DoorActivate : MonoBehaviour {
 	void Update()
 	{
 		// Remove this key press when activate is finished - Stuart
-		if(Input.GetKeyDown("z"))
+		if(Input.GetKeyDown("z") && (doorRotating == false))
 		{
 			doorRotating = true;
+			if(!audioPlayed)
+			{
+				audio.Play();
+				audioPlayed = true;
+			}
 		}
 
 		// Rotate door if doorRotating == true
 		if(doorRotating == true)
 		{
-			Rotate(rotationVelocity);
+			Rotate();
 		}
 	}
 }
