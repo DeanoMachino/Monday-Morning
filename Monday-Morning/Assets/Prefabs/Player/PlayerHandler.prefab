@@ -1,14 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &134036
+--- !u!1 &163586
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 486020}
-  - 114: {fileID: 11455504}
+  - 4: {fileID: 407938}
+  - 114: {fileID: 11402912}
+  - 114: {fileID: 11467568}
   m_Layer: 0
   m_Name: PlayerHandler
   m_TagString: Untagged
@@ -16,24 +17,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &486020
+--- !u!4 &407938
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134036}
+  m_GameObject: {fileID: 163586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11455504
+--- !u!114 &11402912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134036}
+  m_GameObject: {fileID: 163586}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8304aeb1aacdf3c43be7a6cb0da389c8, type: 3}
@@ -41,38 +42,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySpaces: 9
   itemList: 
+  cerealBoxIcon: {fileID: 0}
+  bowlIcon: {fileID: 0}
+  milkIcon: {fileID: 0}
+  spoonIcon: {fileID: 0}
+  spannerIcon: {fileID: 0}
+  towelDirtyIcon: {fileID: 0}
+  towelCleanIcon: {fileID: 0}
+  bundleOfClothesIcon: {fileID: 0}
+  keyIcon: {fileID: 0}
+--- !u!114 &11467568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e861946e49d6e40ad749c0c1ccd129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeImg: {fileID: 0}
+  fadeSpeed: 1
+  sceneStarting: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: inventorySpaces
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: inventoryBar
-      value: 
-      objectReference: {fileID: 152800, guid: c2aacf46b85512a449851c336a877dd8, type: 2}
-    - target: {fileID: 0}
-      propertyPath: inventoryItem
-      value: 
-      objectReference: {fileID: 141306, guid: de08f9904719c59478550c5896c3ebb0, type: 2}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 134036}
+  m_RootGameObject: {fileID: 163586}
   m_IsPrefabParent: 1

@@ -1,5 +1,8 @@
 ﻿<Properties>
 <<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
+=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Action\PlayerActivate.cs">
     <Files>
@@ -18,6 +21,7 @@
 >>>>>>> 1eec8050a069cc41eb2adb4b8fbadac768e81f13
     </Files>
   </MonoDevelop.Ide.Workbench>
+>>>>>>> 3b8684335be2cd73659f2f552b1683927bb61f2d
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

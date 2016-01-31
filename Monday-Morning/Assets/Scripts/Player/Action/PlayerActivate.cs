@@ -148,7 +148,7 @@ public class PlayerActivate : MonoBehaviour {
 				// DEFAULT ITEMS //
 				// ============= //
 			case "Untagged":
-				label = "[UNTAGGED ITEM]";
+				//label = "[UNTAGGED ITEM]";
 				break;
 			default:
 				Debug.Log ("Tag hit: " + hit.collider.tag);
