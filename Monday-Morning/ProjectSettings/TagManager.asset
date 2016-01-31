@@ -22,10 +22,14 @@ TagManager:
   - ShowerUnit
   - Door
   - FrontDoor
-  - WardrobeDoor
   - ShowerDoor
   - BinLid
   - Drawers
+  - BackgroundMusic
+  - GameManager
+  - FridgeDoor
+  - WardrobeDoorLeft
+  - WardrobeDoorRight
   layers:
   - Default
   - TransparentFX

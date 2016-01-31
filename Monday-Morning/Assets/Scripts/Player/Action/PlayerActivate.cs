@@ -288,12 +288,32 @@ public class PlayerActivate : MonoBehaviour {
 				Debug.Log ("ActivateObject -- Door");
 				// Open the door
 				hit.collider.GetComponentInParent<DoorActivate>().Activate();
-			break;
+				break;
 			case "FrontDoor":
 				Debug.Log ("ActivateObject -- FrontDoor");
-				// Finish if all other objectives are complete
+				// Finish if all other objectives are complete - Stuart
 				break;
-
+			case "FridgeDoor":
+				Debug.Log ("ActivateObject -- FridgeDoor");
+				// Open the fridge
+				hit.collider.GetComponentInParent<DoorActivate>().Activate();
+				break;
+			case "WardrobeDoorLeft":
+				Debug.Log ("ActivateObject -- WardrobeDoorLeft");
+				// Open the wardrobe
+				hit.collider.GetComponentInParent<DoorActivate>().Activate();
+				break;
+			case "WardrobeDoorRight":
+				Debug.Log ("ActivateObject -- WardrobeDoorRight");
+				// Open the wardrobe
+				hit.collider.GetComponentInParent<DoorActivate>().Activate();
+				break;
+			case "Drawers":
+				Debug.Log ("ActivateObject -- Drawers");
+				// Open the drawers
+				hit.collider.GetComponentInParent<DoorActivate>().Activate();
+				break;
+			
 			// DEFAULT ITEMS //
 			// ============= //
 			case "Untagged":
