@@ -1,12 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\Timer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Inventory\InventoryItem.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\Action\PlayerActivate.cs" Line="43" Column="33" />
-      <File FileName="Assets\Scripts\Player\Inventory\InventoryManager.cs" Line="53" Column="21" />
-      <File FileName="Assets\Scripts\Environment\DoorActivate.cs" Line="36" Column="4" />
-      <File FileName="Assets\Scripts\Environment\ItemPickup.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\GameLogic\Timer.cs" Line="38" Column="45" />
+      <File FileName="Assets\Scripts\Player\Action\PlayerActivate.cs" Line="139" Column="21" />
+      <File FileName="Assets\Scripts\Player\Inventory\InventoryManager.cs" Line="59" Column="1" />
+      <File FileName="Assets\Scripts\Player\Inventory\InventoryItem.cs" Line="11" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
