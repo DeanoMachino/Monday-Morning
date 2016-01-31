@@ -30,14 +30,15 @@ TagManager:
   - KitchenSink
   - KeyHolder
   - Key
-<<<<<<< HEAD
-  - Cube
+  - TowelDirty
   - BackgroundMusic
   - Door
   - GameManager
+<<<<<<< HEAD
+  - DryingRack
 =======
-  - TowelDirty
->>>>>>> 9a9a5e665e08971172010e601fa0c2d08967b6d1
+  - Audio
+>>>>>>> 602220914d40d640b0f3023315284e69495cd459
   layers:
   - Default
   - TransparentFX

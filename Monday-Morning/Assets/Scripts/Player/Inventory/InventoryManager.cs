@@ -10,10 +10,22 @@ public class InventoryManager : MonoBehaviour {
 	public int inventorySpaces = 9;
 	public List<ItemType> itemList;
 
+	public InventoryIcon cerealBoxIcon;
+	public InventoryIcon bowlIcon;
+	public InventoryIcon milkIcon;
+	public InventoryIcon spoonIcon;
+	public InventoryIcon spannerIcon;
+	public InventoryIcon towelDirtyIcon;
+	public InventoryIcon towelCleanIcon;
+	public InventoryIcon bundleOfClothesIcon;
+	public InventoryIcon keyIcon;
+
 	// Use this for initialization
 	void Start() {
 		itemList = new List<ItemType>();
 		itemList.Clear();
+
+		//cerealBoxIcon
 	}
 
 	// Receives message
@@ -31,6 +43,36 @@ public class InventoryManager : MonoBehaviour {
 			if(!exists){
 				Debug.Log ("Item Picked Up: " + type_.ToString ());
 				itemList.Add (type_);
+
+				switch(type_){
+					case ItemType.CEREAL_BOX:
+						cerealBoxIcon.held = true;
+						break;
+					case ItemType.BOWL:
+						bowlIcon.held = true;
+						break;
+					case ItemType.MILK:
+						milkIcon.held = true;
+						break;
+					case ItemType.SPOON:
+						spoonIcon.held = true;
+						break;
+					case ItemType.SPANNER:
+						spannerIcon.held = true;
+						break;
+					case ItemType.TOWEL_DIRTY:
+						towelDirtyIcon.held = true;
+						break;
+					case ItemType.TOWEL_CLEAN:
+						towelCleanIcon.held = true;
+						break;
+					case ItemType.BUNDLE_OF_CLOTHES:
+						bundleOfClothesIcon.held = true;
+						break;
+					case ItemType.KEY:
+						keyIcon.held = true;
+						break;
+				}
 			}
 		}
 	}
@@ -43,6 +85,36 @@ public class InventoryManager : MonoBehaviour {
 			for(int index = itemList.Count - 1; index >= 0; --index){
 				if(itemList[index] == type_){
 					itemList.RemoveAt(index);
+
+					switch(type_){
+					case ItemType.CEREAL_BOX:
+						cerealBoxIcon.held = false;
+						break;
+					case ItemType.BOWL:
+						bowlIcon.held = false;
+						break;
+					case ItemType.MILK:
+						milkIcon.held = false;
+						break;
+					case ItemType.SPOON:
+						spoonIcon.held = false;
+						break;
+					case ItemType.SPANNER:
+						spannerIcon.held = false;
+						break;
+					case ItemType.TOWEL_DIRTY:
+						towelDirtyIcon.held = false;
+						break;
+					case ItemType.TOWEL_CLEAN:
+						towelCleanIcon.held = false;
+						break;
+					case ItemType.BUNDLE_OF_CLOTHES:
+						bundleOfClothesIcon.held = false;
+						break;
+					case ItemType.KEY:
+						keyIcon.held = false;
+						break;
+					}
 				}
 			}
 		}
