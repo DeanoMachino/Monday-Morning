@@ -196,6 +196,7 @@ public class PlayerActivate : MonoBehaviour {
 			case "Key":
 				Debug.Log ("ActivateObject -- Key");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.KEY, SendMessageOptions.DontRequireReceiver);
+				GameManager.Instance.gameObjectives.takenKeys = true;
 				break;
 			
 			// INTERACTIVE ITEMS //

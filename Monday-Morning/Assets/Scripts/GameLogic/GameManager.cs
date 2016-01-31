@@ -17,12 +17,11 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//tasksCompleted = gameObjectives.MainObjectivesCompleted ();
+		tasksCompleted = gameObjectives.MainObjectivesCompleted ();
 
 		if (tasksCompleted) {
 			Debug.Log("Tasks Completed");
 			fader.EndScene(2);
-			// DO SOMETHING FOR WINNING THE GAME
 		}
 	}
 
