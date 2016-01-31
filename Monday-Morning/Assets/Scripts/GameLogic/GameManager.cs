@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour {
 	public Objectives gameObjectives;
 
 	public bool tasksCompleted = false;
-	
+
+	void Start(){
+		gameObjectives = new Objectives ();
+	}
 
 	// Update is called once per frame
 	void Update () {

@@ -96,7 +96,7 @@ public class PlayerActivate : MonoBehaviour {
 					// SET LABEL TO "You need something to eat"
 					label = "You need something to eat";
 				}else if(GameManager.Instance.gameObjectives.placedBowl && GameManager.Instance.gameObjectives.placedSpoon &&
-				         !InventoryManager.Instance.HoldingItem(ItemType.MILK) && InventoryManager.Instance.HoldingItem(ItemType.CEREAL_BOX)){		// ELSE IF BOWL AND SPOON PLACED AND HOLDING MILK AND CEREAL BOX
+				         InventoryManager.Instance.HoldingItem(ItemType.MILK) && InventoryManager.Instance.HoldingItem(ItemType.CEREAL_BOX)){		// ELSE IF BOWL AND SPOON PLACED AND HOLDING MILK AND CEREAL BOX
 					// SET LABEL TO "Eat breakfast"
 					label = "Eat breakfast";
 				}
@@ -122,23 +122,25 @@ public class PlayerActivate : MonoBehaviour {
 				}
 				break;
 			case "ShowerUnit":
-				// IF SHOWER IS BROKEN AND NOT HOLDING SPANNER
-				if(!GameManager.Instance.gameObjectives.fixedShower && !InventoryManager.Instance.HoldingItem(ItemType.SPANNER)){
-					// SET LABEL TO "The shower is broken"
-					label = "The shower is broken";
-				}else if(!GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.SPANNER)){	// ELSE IF SHOWER IS BROKEN AND HOLDING SPANNER
-					// SET LABEL TO "Fix the shower"
-					label = "Fix the shower";
-				}else if(GameManager.Instance.gameObjectives.fixedShower &&
-				         (!InventoryManager.Instance.HoldingItem(ItemType.TOWEL_DIRTY) && !InventoryManager.Instance.HoldingItem(ItemType.TOWEL_CLEAN))){	// ELSE IF SHOWER IS FIXED AND NOT HOLDING TOWEL
-					// SET LABEL TO "You need a towel"
-					label = "You need a towel";
-				}else if(GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.TOWEL_DIRTY)){	// ELSE IF SHOWER IS FIXED AND HOLDING DIRTY TOWEL
-					// SET LABEL TO "You need a CLEAN towel"
-					label = "You need a CLEAN towel";
-				}else if(GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.TOWEL_CLEAN)){	// ELSE IF SHOWER IS FIXED AND HOLDING CLEAN TOWEL
-					// SET LABEL TO "Take a shower"
-					label = "Have a shower";
+				if(!GameManager.Instance.gameObjectives.hadShower){
+					// IF SHOWER IS BROKEN AND NOT HOLDING SPANNER
+					if(!GameManager.Instance.gameObjectives.fixedShower && !InventoryManager.Instance.HoldingItem(ItemType.SPANNER)){
+						// SET LABEL TO "The shower is broken"
+						label = "The shower is broken";
+					}else if(!GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.SPANNER)){	// ELSE IF SHOWER IS BROKEN AND HOLDING SPANNER
+						// SET LABEL TO "Fix the shower"
+						label = "Fix the shower";
+					}else if(GameManager.Instance.gameObjectives.fixedShower &&
+					         (!InventoryManager.Instance.HoldingItem(ItemType.TOWEL_DIRTY) && !InventoryManager.Instance.HoldingItem(ItemType.TOWEL_CLEAN))){	// ELSE IF SHOWER IS FIXED AND NOT HOLDING TOWEL
+						// SET LABEL TO "You need a towel"
+						label = "You need a towel";
+					}else if(GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.TOWEL_DIRTY)){	// ELSE IF SHOWER IS FIXED AND HOLDING DIRTY TOWEL
+						// SET LABEL TO "You need a CLEAN towel"
+						label = "You need a CLEAN towel";
+					}else if(GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.TOWEL_CLEAN)){	// ELSE IF SHOWER IS FIXED AND HOLDING CLEAN TOWEL
+						// SET LABEL TO "Take a shower"
+						label = "Have a shower";
+					}
 				}
 				break;
 
@@ -152,7 +154,7 @@ public class PlayerActivate : MonoBehaviour {
 				break;
 		}
 	}
-	
+	//Debug.Log ("");
 
 	void ActivateObject(RaycastHit hit){
 		switch (hit.collider.tag) {
@@ -163,33 +165,42 @@ public class PlayerActivate : MonoBehaviour {
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.CEREAL_BOX, SendMessageOptions.DontRequireReceiver);
 				break;
 			case "Bowl":
+				Debug.Log ("ActivateObject -- Bowl");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.BOWL, SendMessageOptions.DontRequireReceiver);
 				break;
 			case "Milk":
+				Debug.Log ("ActivateObject -- Milk");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.MILK, SendMessageOptions.DontRequireReceiver);
 				break;
 			case "Spoon":
+				Debug.Log ("ActivateObject -- Spoon");	
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.SPOON, SendMessageOptions.DontRequireReceiver);
 				break;
 			case "Spanner":
+				Debug.Log ("ActivateObject -- Spanner");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.SPANNER, SendMessageOptions.DontRequireReceiver);
 				break;
 			case "TowelDirty":
+				Debug.Log ("ActivateObject -- TowelDirty");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.TOWEL_DIRTY, SendMessageOptions.DontRequireReceiver);
 				break;
 			case "TowelClean":
+				Debug.Log ("ActivateObject -- TowelClean");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.TOWEL_CLEAN, SendMessageOptions.DontRequireReceiver);
 				break;
 			case "BundleOfClothes":
+				Debug.Log ("ActivateObject -- BundleOfClothes");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.BUNDLE_OF_CLOTHES, SendMessageOptions.DontRequireReceiver);
 				break;
 			case "Key":
+				Debug.Log ("ActivateObject -- Key");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.KEY, SendMessageOptions.DontRequireReceiver);
 				break;
 			
 			// INTERACTIVE ITEMS //
 			// ================= //
 			case "KitchenSink":
+				Debug.Log ("ActivateObject -- KitchenSink");
 				// IF DISHES NOT DONE
 				if(!GameManager.Instance.gameObjectives.doneDishes){
 					GameManager.Instance.SendMessage("CompleteTask", GameObjectives.DO_DISHES, SendMessageOptions.DontRequireReceiver);
@@ -197,6 +208,7 @@ public class PlayerActivate : MonoBehaviour {
 				}
 				break;
 			case "DryingRack":
+				Debug.Log ("ActivateObject -- DryingRack");
 				// IF DISHES DONE AND DISHES TO BE PUT AWAY
 				if(GameManager.Instance.gameObjectives.doneDishes){
 					if(!GameManager.Instance.gameObjectives.driedDishes){
@@ -206,6 +218,7 @@ public class PlayerActivate : MonoBehaviour {
 				}
 				break;
 			case "KitchenTable":
+				Debug.Log ("ActivateObject -- KitchenTable");
 				// IF HOLDING BOWL
 				if(InventoryManager.Instance.HoldingItem(ItemType.BOWL)){
 					// Place bowl on table and remove from inventory
@@ -219,7 +232,7 @@ public class PlayerActivate : MonoBehaviour {
 				         !(InventoryManager.Instance.HoldingItem(ItemType.MILK) && InventoryManager.Instance.HoldingItem(ItemType.CEREAL_BOX))){	// ELSE IF ( BOWL AND SPOON PLACED ) AND NOT ( HOLDING MILK AND CEREAL BOX )
 					// do nothing
 				}else if(GameManager.Instance.gameObjectives.placedBowl && GameManager.Instance.gameObjectives.placedSpoon &&
-				         !InventoryManager.Instance.HoldingItem(ItemType.MILK) && InventoryManager.Instance.HoldingItem(ItemType.CEREAL_BOX)){		// ELSE IF BOWL AND SPOON PLACED AND HOLDING MILK AND CEREAL BOX
+				         InventoryManager.Instance.HoldingItem(ItemType.MILK) && InventoryManager.Instance.HoldingItem(ItemType.CEREAL_BOX)){		// ELSE IF BOWL AND SPOON PLACED AND HOLDING MILK AND CEREAL BOX
 					// Eat breakfast and remove cereal and milk from inventory
 					GameManager.Instance.SendMessage("CompleteTask", GameObjectives.EAT_BREAKFAST, SendMessageOptions.DontRequireReceiver);
 					InventoryManager.Instance.SendMessage("ItemDropped", ItemType.CEREAL_BOX, SendMessageOptions.DontRequireReceiver);
@@ -227,6 +240,7 @@ public class PlayerActivate : MonoBehaviour {
 				}
 				break;
 			case "WashingMachine":
+				Debug.Log ("ActivateObject -- WashingMachine");
 				// IF HOLDING BUNDLE OF CLOTHES
 				if(InventoryManager.Instance.HoldingItem(ItemType.BUNDLE_OF_CLOTHES)){
 					// Wash dirty clothes and remove from inventory
@@ -239,6 +253,7 @@ public class PlayerActivate : MonoBehaviour {
 				}
 				break;
 			case "WorkOutfit":
+				Debug.Log ("ActivateObject -- WorkOutfit");
 				// IF NOT HAD SHOWER YET
 				if(!GameManager.Instance.gameObjectives.hadShower){
 					// do nothing
@@ -248,6 +263,7 @@ public class PlayerActivate : MonoBehaviour {
 				}
 				break;
 			case "ShowerUnit":
+				Debug.Log ("ActivateObject -- ShowerUnit");
 				// IF SHOWER IS BROKEN AND NOT HOLDING SPANNER
 				if(!GameManager.Instance.gameObjectives.fixedShower && !InventoryManager.Instance.HoldingItem(ItemType.SPANNER)){
 					// do nothing

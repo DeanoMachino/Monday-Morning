@@ -34,6 +34,7 @@ TagManager:
   - BackgroundMusic
   - Door
   - GameManager
+  - DryingRack
   layers:
   - Default
   - TransparentFX
