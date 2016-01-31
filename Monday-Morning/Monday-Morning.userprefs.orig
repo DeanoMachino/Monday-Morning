@@ -1,20 +1,21 @@
 ﻿<Properties>
 <<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Environment\DoorActivate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Action\PlayerActivate.cs">
     <Files>
-      <File FileName="Assets\Scripts\GUI\GUIWatermark.cs" Line="19" Column="14" />
-      <File FileName="Assets\Scripts\GameLogic\Timer.cs" Line="67" Column="34" />
-      <File FileName="Assets\Scripts\Player\Action\PlayerActivate.cs" Line="170" Column="2" />
-      <File FileName="Assets\Scripts\Environment\DoorActivate.cs" Line="44" Column="77" />
+      <File FileName="Assets\Scripts\Environment\DoorActivate.cs" Line="86" Column="24" />
+      <File FileName="Assets\Scripts\GUI\GUIWatermark.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\Timer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Action\PlayerActivate.cs" Line="287" Column="21" />
 =======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Inventory\InventoryItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainMenu\CreditsScreen.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\Action\PlayerActivate.cs" Line="139" Column="21" />
-      <File FileName="Assets\Scripts\Player\Inventory\InventoryManager.cs" Line="59" Column="1" />
-      <File FileName="Assets\Scripts\Player\Inventory\InventoryItem.cs" Line="11" Column="2" />
->>>>>>> e80fb53e298f76a1ee39cba52e8eda6deda4deb5
+      <File FileName="Assets\Scripts\GUI\ScreenFader.cs" Line="70" Column="40" />
+      <File FileName="Assets\Scripts\GameLogic\GameManager.cs" Line="22" Column="24" />
+      <File FileName="Assets\Scripts\MainMenu\StartGame.cs" Line="8" Column="15" />
+      <File FileName="Assets\Scripts\MainMenu\CreditsScreen.cs" Line="1" Column="1" />
+>>>>>>> 1eec8050a069cc41eb2adb4b8fbadac768e81f13
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
