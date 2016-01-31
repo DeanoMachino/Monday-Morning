@@ -8,6 +8,7 @@ public class PlayerActivate : MonoBehaviour {
 	public float range;
 	private string label;
 	private bool visible = false;
+	private GameObject objectHit;
 
 	void Update(){
 		RaycastHit hit;
@@ -281,6 +282,15 @@ public class PlayerActivate : MonoBehaviour {
 					GameManager.Instance.SendMessage("CompleteTask", GameObjectives.HAVE_SHOWER, SendMessageOptions.DontRequireReceiver);
 					InventoryManager.Instance.SendMessage("ItemDropped", ItemType.TOWEL_CLEAN, SendMessageOptions.DontRequireReceiver);
 				}
+				break;
+			case "Door":
+				Debug.Log ("ActivateObject -- Door");
+				// Open the door
+				hit.collider.GetComponentInParent<DoorActivate>().Activate();
+			break;
+			case "FrontDoor":
+				Debug.Log ("ActivateObject -- FrontDoor");
+				// Finish if all other objectives are complete
 				break;
 
 			// DEFAULT ITEMS //

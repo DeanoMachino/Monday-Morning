@@ -485,6 +485,14 @@ Prefab:
       propertyPath: m_Name
       value: FrontDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 147070, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_TagString
+      value: FrontDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 9571998, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
   m_IsPrefabParent: 0
@@ -1541,6 +1549,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ecb036b59ac2f74db6538afbf2d9258, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &583385089 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147070, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+  m_PrefabInternal: {fileID: 1012776799}
+--- !u!114 &583385090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 583385089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6495835821e0c0243a97fcfa8a63ea64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorMaxRotation: 90
+  rotationVelocity: 1.5
 --- !u!1001 &600678628
 Prefab:
   m_ObjectHideFlags: 0
@@ -2989,6 +3014,18 @@ Prefab:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 147070, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9571998, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ea9bd418073e80f4d8f69401889a84c3, type: 2}
+    - target: {fileID: 9571998, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
   m_IsPrefabParent: 0
@@ -3289,7 +3326,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.375
+      value: -5.38000011
       objectReference: {fileID: 0}
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3297,23 +3334,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.30000019
+      value: 2.71499991
       objectReference: {fileID: 0}
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -.5
+      value: -.499999911
       objectReference: {fileID: 0}
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.5
+      value: .500000119
       objectReference: {fileID: 0}
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -.499999762
+      value: .500000358
       objectReference: {fileID: 0}
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .500000298
+      value: .499999672
       objectReference: {fileID: 0}
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_RootOrder
@@ -3322,6 +3359,18 @@ Prefab:
     - target: {fileID: 147070, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_Name
       value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 147070, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9571998, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ea9bd418073e80f4d8f69401889a84c3, type: 2}
+    - target: {fileID: 9571998, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
@@ -3426,6 +3475,48 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 474092, guid: 3fddf9d1d72d2d742b7bf04ca5118a6e, type: 2}
   m_PrefabInternal: {fileID: 1388567613}
+--- !u!1001 &1193045670
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 422168, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422168, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422168, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422168, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422168, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422168, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422168, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 422168, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a11c48846369c7a49ae2320c2ab26063, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1199674425
 Prefab:
   m_ObjectHideFlags: 0
@@ -3598,6 +3689,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1233994595}
   m_GameObject: {fileID: 1247605699}
   m_Mesh: {fileID: 4300000, guid: 8b475318463d80e4cada795a5ccd2d92, type: 3}
+--- !u!1 &1280674150 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147070, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+  m_PrefabInternal: {fileID: 1421160049}
+--- !u!114 &1280674151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280674150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6495835821e0c0243a97fcfa8a63ea64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorMaxRotation: 90
+  rotationVelocity: 1.5
 --- !u!4 &1294902344 stripped
 Transform:
   m_PrefabParentObject: {fileID: 417454, guid: 9ee4d8d19be510d448a682d747f568a1, type: 2}
@@ -3878,6 +3986,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f427864bdb30c8438a346c515a22057, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1322161392 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147070, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+  m_PrefabInternal: {fileID: 1113734112}
+--- !u!114 &1322161393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322161392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6495835821e0c0243a97fcfa8a63ea64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorMaxRotation: 90
+  rotationVelocity: 1.5
 --- !u!4 &1371301390 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
@@ -4065,6 +4190,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401892, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 147070, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9571998, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ea9bd418073e80f4d8f69401889a84c3, type: 2}
+    - target: {fileID: 9571998, guid: e335efc299fb65840bbb5485bf55cde8, type: 2}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
