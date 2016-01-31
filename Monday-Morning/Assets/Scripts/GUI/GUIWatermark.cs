@@ -10,12 +10,6 @@ public class GUIWatermark : MonoBehaviour {
 	public Vector2 position = new Vector2(0, 0);
 	public Vector2 scale = new Vector2(0.2f, 0.2f);
 	
-	// Use this for initialization
-	void Start () {
-		//position = new Vector2((
-
-	}
-	
 	void OnGUI(){
 		position.x = 0;
 		position.y = Screen.height - watermark.height * scale.y;

@@ -11,7 +11,7 @@ public class InventoryIcon : MonoBehaviour {
 	public bool held = false;
 		
 	void OnGUI(){
-		if (true) {
+		if (held) {
 			GUI.DrawTexture (new Rect (Screen.width * 0.665f, Screen.height * 0.9275f, icon.width * scale.x, icon.height * scale.y), icon);
 		}
 	}

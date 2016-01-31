@@ -5,37 +5,27 @@ TagManager:
   serializedVersion: 2
   tags:
   - Environment
-  - ShowerUnit
-  - ShowerHead
-  - ShowerTray
-  - TowelHandle
-  - TowelClean
-  - ShowerMat
-  - Spanner
-  - ChestOfDrawers
-  - Wardrobe
-  - DeskWithDrawers
-  - BundleOfClothes
-  - WorkOutfit
-  - WashingMachine
   - CerealBox
-  - KitchenCupboards
-  - KitchenDrawers
-  - Fridge
   - Bowl
   - Milk
-  - KitchenTable
-  - KitchenWorktop
   - Spoon
-  - KitchenSink
-  - KeyHolder
-  - Key
+  - Spanner
   - TowelDirty
-  - BackgroundMusic
-  - Door
-  - GameManager
-  - Audio
+  - TowelClean
+  - BundleOfClothes
+  - Key
+  - KitchenSink
   - DryingRack
+  - KitchenTable
+  - WashingMachine
+  - WorkOutfit
+  - ShowerUnit
+  - Door
+  - FrontDoor
+  - WardrobeDoor
+  - ShowerDoor
+  - BinLid
+  - Drawers
   layers:
   - Default
   - TransparentFX
