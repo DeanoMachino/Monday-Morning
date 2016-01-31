@@ -47,9 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Environment\DoorActivate.cs" />
+     <Compile Include="Assets\Scripts\Environment\ItemPickup.cs" />
      <Compile Include="Assets\Scripts\GUI\GUICrosshair.cs" />
      <Compile Include="Assets\Scripts\GUI\GUIWatermark.cs" />
      <Compile Include="Assets\Scripts\GUI\ToggleCursor.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\ScreenFadeInOut.cs" />
+     <Compile Include="Assets\Scripts\GameLogic\Timer.cs" />
      <Compile Include="Assets\Scripts\Player\Action\ObjectLift.cs" />
      <Compile Include="Assets\Scripts\Player\Action\PlayerActivate.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory\InventoryItem.cs" />

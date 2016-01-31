@@ -48,6 +48,15 @@ public class InventoryManager : MonoBehaviour {
 		}
 	}
 
+	public bool HoldingItem(ItemType type_){
+		for (int index = itemList.Count - 1; index >= 0; --index) {
+			if(itemList[index] == type_){
+				return true;
+			}
+		}
+		return false;
+	}
+
 	void EmptyInventory(){
 		itemList.Clear ();
 	}
@@ -64,8 +73,8 @@ public enum ItemType {
 	MILK,
 	SPOON,
 	SPANNER,
-	TOWEL,
+	TOWEL_DIRTY,
+	TOWEL_CLEAN,
 	BUNDLE_OF_CLOTHES,
-	WORK_OUTFIT,
 	KEY
 }
