@@ -10,15 +10,16 @@ public class InventoryManager : MonoBehaviour {
 	public int inventorySpaces = 9;
 	public List<ItemType> itemList;
 
-	public InventoryIcon cerealBoxIcon;
-	public InventoryIcon bowlIcon;
-	public InventoryIcon milkIcon;
-	public InventoryIcon spoonIcon;
-	public InventoryIcon spannerIcon;
-	public InventoryIcon towelDirtyIcon;
-	public InventoryIcon towelCleanIcon;
-	public InventoryIcon bundleOfClothesIcon;
-	public InventoryIcon keyIcon;
+	//public RenderIcon cerealBoxR;
+	public GameObject cerealBoxIcon;
+	public GameObject bowlIcon;
+	public GameObject milkIcon;
+	public GameObject spoonIcon;
+	public GameObject spannerIcon;
+	public GameObject towelDirtyIcon;
+	public GameObject towelCleanIcon;
+	public GameObject bundleOfClothesIcon;
+	public GameObject keyIcon;
 
 	// Use this for initialization
 	void Start() {
@@ -46,31 +47,31 @@ public class InventoryManager : MonoBehaviour {
 
 				switch(type_){
 					case ItemType.CEREAL_BOX:
-						cerealBoxIcon.held = true;
+						cerealBoxIcon.SetActive(true);
 						break;
 					case ItemType.BOWL:
-						bowlIcon.held = true;
+						bowlIcon.SetActive(true);
 						break;
 					case ItemType.MILK:
-						milkIcon.held = true;
+						milkIcon.SetActive(true);
 						break;
 					case ItemType.SPOON:
-						spoonIcon.held = true;
+						spoonIcon.SetActive(true);
 						break;
 					case ItemType.SPANNER:
-						spannerIcon.held = true;
+						spannerIcon.SetActive(true);
 						break;
 					case ItemType.TOWEL_DIRTY:
-						towelDirtyIcon.held = true;
+						towelDirtyIcon.SetActive(true);
 						break;
 					case ItemType.TOWEL_CLEAN:
-						towelCleanIcon.held = true;
+						towelCleanIcon.SetActive(true);
 						break;
 					case ItemType.BUNDLE_OF_CLOTHES:
-						bundleOfClothesIcon.held = true;
+						bundleOfClothesIcon.SetActive(true);
 						break;
 					case ItemType.KEY:
-						keyIcon.held = true;
+						keyIcon.SetActive(true);
 						break;
 				}
 			}
@@ -88,31 +89,31 @@ public class InventoryManager : MonoBehaviour {
 
 					switch(type_){
 					case ItemType.CEREAL_BOX:
-						cerealBoxIcon.held = false;
+						cerealBoxIcon.SetActive(false);
 						break;
 					case ItemType.BOWL:
-						bowlIcon.held = false;
+						bowlIcon.SetActive(false);
 						break;
 					case ItemType.MILK:
-						milkIcon.held = false;
+						milkIcon.SetActive(false);
 						break;
 					case ItemType.SPOON:
-						spoonIcon.held = false;
+						spoonIcon.SetActive(false);
 						break;
 					case ItemType.SPANNER:
-						spannerIcon.held = false;
+						spannerIcon.SetActive(false);
 						break;
 					case ItemType.TOWEL_DIRTY:
-						towelDirtyIcon.held = false;
+						towelDirtyIcon.SetActive(false);
 						break;
 					case ItemType.TOWEL_CLEAN:
-						towelCleanIcon.held = false;
+						towelCleanIcon.SetActive(false);
 						break;
 					case ItemType.BUNDLE_OF_CLOTHES:
-						bundleOfClothesIcon.held = false;
+						bundleOfClothesIcon.SetActive(false);
 						break;
 					case ItemType.KEY:
-						keyIcon.held = false;
+						keyIcon.SetActive(false);
 						break;
 					}
 				}
