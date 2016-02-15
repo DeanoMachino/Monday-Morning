@@ -6,18 +6,20 @@ using System.Collections;
 public class PlayerActivate : MonoBehaviour {
 	
 	public float range;
-	private string label;
-	private bool visible = false;
 	private GameObject objectHit;
+
+	private string tooltip;
+	private bool tooltipVisible = false;
 
 	void Update(){
 		RaycastHit hit;
 		Ray activationRay = new Ray (transform.position, transform.forward);
-		visible = false;
+		tooltipVisible = false;
+
 		// Check if object has been hit
 		if (Physics.Raycast (activationRay, out hit, range)) {
-			visible = true;
-			label = "";
+			tooltipVisible = true;
+			tooltip = "";
 
 			SetTooltipLabel(hit);
 
@@ -25,12 +27,6 @@ public class PlayerActivate : MonoBehaviour {
 				Debug.Log ("Object Hit");
 				ActivateObject(hit);
 			}
-
-			// TEMP -- Testing removing objects from the inventory
-			if (Input.GetKeyDown ("q")) {
-				InventoryManager.Instance.SendMessage("ItemDropped", ItemType.CEREAL_BOX, SendMessageOptions.DontRequireReceiver);
-			}
-
 		}
 	}
 
@@ -39,31 +35,31 @@ public class PlayerActivate : MonoBehaviour {
 			// INVENTORY ITEMS //
 			// =============== //
 			case "CerealBox":
-				label = "Take Box of Cereal";
+				tooltip = "Take Box of Cereal";
 				break;
 			case "Bowl":
-				label = "Take Bowl";
+				tooltip = "Take Bowl";
 				break;
 			case "Milk":
-				label = "Take Milk";
+				tooltip = "Take Milk";
 				break;
 			case "Spoon":
-				label = "Take Spoon";
+				tooltip = "Take Spoon";
 				break;
 			case "Spanner":
-				label = "Take Spanner";
+				tooltip = "Take Spanner";
 				break;
 			case "TowelDirty":
-				label = "Take Dirty Towel";
+				tooltip = "Take Dirty Towel";
 				break;
 			case "TowelClean":
-				label = "Take Clean Towel";
+				tooltip = "Take Clean Towel";
 				break;
 			case "BundleOfClothes":
-				label = "Take Bundle of Clothes";
+				tooltip = "Take Bundle of Clothes";
 				break;
 			case "Key":
-				label = "Take Key";
+				tooltip = "Take Key";
 				break;
 
 			// INTERACTIVE ITEMS //
@@ -71,76 +67,77 @@ public class PlayerActivate : MonoBehaviour {
 			case "KitchenSink":
 				// IF DISHES NOT DONE
 				if(!GameManager.Instance.gameObjectives.doneDishes){
-					// SET LABEL TO "Wash dirty dishes"
-					label = "Wash dirty dishes";
+					// SET TOOLTIP TO "Wash dirty dishes"
+					tooltip = "Wash dirty dishes";
 				}
 				break;
 			case "DryingRack":
 				// IF DISHES DONE AND DISHES TO BE PUT AWAY
 				if(GameManager.Instance.gameObjectives.doneDishes){
 					if(!GameManager.Instance.gameObjectives.driedDishes){
-						// SET LABEL TO "Put away dishes"
-						label = "Put away dishes";
+						// SET TOOLTIP TO "Put away dishes"
+						tooltip = "Put away dishes";
 					}
 				}
 				break;
 			case "KitchenTable":
 				// IF HOLDING BOWL
 				if(InventoryManager.Instance.HoldingItem(ItemType.BOWL)){
-					// SET LABEL TO "Place bowl"
-					label = "Place bowl";
+					// SET TOOLTIP TO "Place bowl"
+					tooltip = "Place bowl";
 				}else if(InventoryManager.Instance.HoldingItem(ItemType.SPOON)){	// ELSE IF HOLDING SPOON
-					// SET LABEL TO "Place spoon"
-					label = "Place spoon";
+					// SET TOOLTIP TO "Place spoon"
+					tooltip = "Place spoon";
 				}else if((GameManager.Instance.gameObjectives.placedBowl && GameManager.Instance.gameObjectives.placedSpoon) &&
-				         !(InventoryManager.Instance.HoldingItem(ItemType.MILK) && InventoryManager.Instance.HoldingItem(ItemType.CEREAL_BOX))){	// ELSE IF ( BOWL AND SPOON PLACED ) AND NOT ( HOLDING MILK AND CEREAL BOX )
-					// SET LABEL TO "You need something to eat"
-					label = "You need something to eat";
+				         !(InventoryManager.Instance.HoldingItem(ItemType.MILK) && InventoryManager.Instance.HoldingItem(ItemType.CEREAL_BOX)) &&
+						 !(GameManager.Instance.gameObjectives.ateBreakfast)){	// ELSE IF ( BOWL AND SPOON PLACED ) AND NOT ( HOLDING MILK AND CEREAL BOX )
+					// SET TOOLTIP TO "You need something to eat"
+					tooltip = "You need something to eat";
 				}else if(GameManager.Instance.gameObjectives.placedBowl && GameManager.Instance.gameObjectives.placedSpoon &&
 				         InventoryManager.Instance.HoldingItem(ItemType.MILK) && InventoryManager.Instance.HoldingItem(ItemType.CEREAL_BOX)){		// ELSE IF BOWL AND SPOON PLACED AND HOLDING MILK AND CEREAL BOX
-					// SET LABEL TO "Eat breakfast"
-					label = "Eat breakfast";
+					// SET TOOLTIP TO "Eat breakfast"
+					tooltip = "Eat breakfast";
 				}
 				break;
 			case "WashingMachine":
 				// IF HOLDING BUNDLE OF CLOTHES
 				if(InventoryManager.Instance.HoldingItem(ItemType.BUNDLE_OF_CLOTHES)){
-					// SET LABEL TO "Wash dirty clothes"
-					label = "Wash dirty clothes";
+					// SET TOOLTIP TO "Wash dirty clothes"
+					tooltip = "Wash dirty clothes";
 				}else if(InventoryManager.Instance.HoldingItem(ItemType.TOWEL_DIRTY)){		// ELSE IF HOLDING DIRTY TOWEL
-					// SET LABEL TO "Wash dirty towel"
-					label = "Wash dirty towel";
+					// SET TOOLTIP TO "Wash dirty towel"
+					tooltip = "Wash dirty towel";
 				}
 				break;
 			case "WorkOutfit":
 				// IF NOT HAD SHOWER YET
 				if(!GameManager.Instance.gameObjectives.hadShower){
-					// SET LABEL TO "You need to take a shower first"
-					label = "You need to take a shower first";
+					// SET TOOLTIP TO "You need to take a shower first"
+					tooltip = "You need to take a shower first";
 				}else{	// IF HAD SHOWER
-					// SET LABEL TO "Get dressed for work"
-					label = "Get dressed for work";
+					// SET TOOLTIP TO "Get dressed for work"
+					tooltip = "Get dressed for work";
 				}
 				break;
 			case "ShowerUnit":
 				if(!GameManager.Instance.gameObjectives.hadShower){
 					// IF SHOWER IS BROKEN AND NOT HOLDING SPANNER
 					if(!GameManager.Instance.gameObjectives.fixedShower && !InventoryManager.Instance.HoldingItem(ItemType.SPANNER)){
-						// SET LABEL TO "The shower is broken"
-						label = "The shower is broken";
+						// SET TOOLTIP TO "The shower is broken"
+						tooltip = "The shower is broken";
 					}else if(!GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.SPANNER)){	// ELSE IF SHOWER IS BROKEN AND HOLDING SPANNER
-						// SET LABEL TO "Fix the shower"
-						label = "Fix the shower";
+						// SET TOOLTIP TO "Fix the shower"
+						tooltip = "Fix the shower";
 					}else if(GameManager.Instance.gameObjectives.fixedShower &&
 					         (!InventoryManager.Instance.HoldingItem(ItemType.TOWEL_DIRTY) && !InventoryManager.Instance.HoldingItem(ItemType.TOWEL_CLEAN))){	// ELSE IF SHOWER IS FIXED AND NOT HOLDING TOWEL
-						// SET LABEL TO "You need a towel"
-						label = "You need a towel";
+						// SET TOOLTIP TO "You need a towel"
+						tooltip = "You need a towel";
 					}else if(GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.TOWEL_DIRTY)){	// ELSE IF SHOWER IS FIXED AND HOLDING DIRTY TOWEL
-						// SET LABEL TO "You need a CLEAN towel"
-						label = "You need a CLEAN towel";
+						// SET TOOLTIP TO "You need a CLEAN towel"
+						tooltip = "You need a CLEAN towel";
 					}else if(GameManager.Instance.gameObjectives.fixedShower && InventoryManager.Instance.HoldingItem(ItemType.TOWEL_CLEAN)){	// ELSE IF SHOWER IS FIXED AND HOLDING CLEAN TOWEL
-						// SET LABEL TO "Take a shower"
-						label = "Have a shower";
+						// SET TOOLTIP TO "Take a shower"
+						tooltip = "Have a shower";
 					}
 				}
 				break;
@@ -148,14 +145,13 @@ public class PlayerActivate : MonoBehaviour {
 				// DEFAULT ITEMS //
 				// ============= //
 			case "Untagged":
-				//label = "[UNTAGGED ITEM]";
+				//tooltip = "[UNTAGGED ITEM]";
 				break;
 			default:
 				Debug.Log ("Tag hit: " + hit.collider.tag);
 				break;
 		}
 	}
-	//Debug.Log ("");
 
 	void ActivateObject(RaycastHit hit){
 		switch (hit.collider.tag) {
@@ -163,40 +159,49 @@ public class PlayerActivate : MonoBehaviour {
 			// =============== //
 			case "CerealBox":
 				Debug.Log ("ActivateObject -- CerealBox");
-				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.CEREAL_BOX, SendMessageOptions.DontRequireReceiver);
+				InventoryManager.Instance.SendMessage ("ItemPickedUp", ItemType.CEREAL_BOX, SendMessageOptions.DontRequireReceiver);
+				GameManager.Instance.ActivateObject (InteractableObjects.CEREAL_BOX);
 				break;
 			case "Bowl":
 				Debug.Log ("ActivateObject -- Bowl");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.BOWL, SendMessageOptions.DontRequireReceiver);
+				GameManager.Instance.ActivateObject (InteractableObjects.BOWL);
 				break;
 			case "Milk":
 				Debug.Log ("ActivateObject -- Milk");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.MILK, SendMessageOptions.DontRequireReceiver);
+			GameManager.Instance.ActivateObject (InteractableObjects.MILK);
 				break;
 			case "Spoon":
 				Debug.Log ("ActivateObject -- Spoon");	
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.SPOON, SendMessageOptions.DontRequireReceiver);
+			GameManager.Instance.ActivateObject (InteractableObjects.SPOON);
 				break;
 			case "Spanner":
 				Debug.Log ("ActivateObject -- Spanner");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.SPANNER, SendMessageOptions.DontRequireReceiver);
+			GameManager.Instance.ActivateObject (InteractableObjects.SPANNER);
 				break;
 			case "TowelDirty":
 				Debug.Log ("ActivateObject -- TowelDirty");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.TOWEL_DIRTY, SendMessageOptions.DontRequireReceiver);
+			GameManager.Instance.ActivateObject (InteractableObjects.TOWEL_DIRTY);
 				break;
 			case "TowelClean":
 				Debug.Log ("ActivateObject -- TowelClean");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.TOWEL_CLEAN, SendMessageOptions.DontRequireReceiver);
+			GameManager.Instance.ActivateObject (InteractableObjects.TOWEL_CLEAN);
 				break;
 			case "BundleOfClothes":
 				Debug.Log ("ActivateObject -- BundleOfClothes");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.BUNDLE_OF_CLOTHES, SendMessageOptions.DontRequireReceiver);
+			GameManager.Instance.ActivateObject (InteractableObjects.BUNDLE_OF_CLOTHES);
 				break;
 			case "Key":
 				Debug.Log ("ActivateObject -- Key");
 				InventoryManager.Instance.SendMessage("ItemPickedUp", ItemType.KEY, SendMessageOptions.DontRequireReceiver);
 				GameManager.Instance.gameObjectives.takenKeys = true;
+			GameManager.Instance.ActivateObject (InteractableObjects.KEY);
 				break;
 			
 			// INTERACTIVE ITEMS //
@@ -206,7 +211,7 @@ public class PlayerActivate : MonoBehaviour {
 				// IF DISHES NOT DONE
 				if(!GameManager.Instance.gameObjectives.doneDishes){
 					GameManager.Instance.SendMessage("CompleteTask", GameObjectives.DO_DISHES, SendMessageOptions.DontRequireReceiver);
-					// do nothing
+					GameManager.Instance.ActivateObject (InteractableObjects.KITCHEN_SINK);
 				}
 				break;
 			case "DryingRack":
@@ -216,6 +221,7 @@ public class PlayerActivate : MonoBehaviour {
 					if(!GameManager.Instance.gameObjectives.driedDishes){
 						// Dry dishes
 						GameManager.Instance.SendMessage("CompleteTask", GameObjectives.DRY_DISHES, SendMessageOptions.DontRequireReceiver);
+						GameManager.Instance.ActivateObject (InteractableObjects.DRYING_RACK);
 					}
 				}
 				break;
@@ -248,10 +254,12 @@ public class PlayerActivate : MonoBehaviour {
 					// Wash dirty clothes and remove from inventory
 					GameManager.Instance.SendMessage("CompleteTask", GameObjectives.WASH_CLOTHES, SendMessageOptions.DontRequireReceiver);
 					InventoryManager.Instance.SendMessage("ItemDropped", ItemType.BUNDLE_OF_CLOTHES, SendMessageOptions.DontRequireReceiver);
+					GameManager.Instance.ActivateObject (InteractableObjects.WASHING_MACHINE);
 				}else if(InventoryManager.Instance.HoldingItem(ItemType.TOWEL_DIRTY)){		// ELSE IF HOLDING DIRTY TOWEL
 					// Wash dirty towel and remove from inventory
 					GameManager.Instance.SendMessage("CompleteTask", GameObjectives.WASH_TOWEL, SendMessageOptions.DontRequireReceiver);
 					InventoryManager.Instance.SendMessage("ItemDropped", ItemType.TOWEL_DIRTY, SendMessageOptions.DontRequireReceiver);
+					GameManager.Instance.ActivateObject (InteractableObjects.WASHING_MACHINE);
 				}
 				break;
 			case "WorkOutfit":
@@ -317,7 +325,7 @@ public class PlayerActivate : MonoBehaviour {
 			// DEFAULT ITEMS //
 			// ============= //
 			case "Untagged":
-				label = "[UNTAGGED ITEM]";
+				tooltip = "[UNTAGGED ITEM]";
 				break;
 			default:
 				Debug.Log ("Tag hit: " + hit.collider.tag);
@@ -326,8 +334,8 @@ public class PlayerActivate : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		if (visible && label != "") {
-			GUI.Box(new Rect(Screen.width / 3, Screen.height * 0.6f, Screen.width / 3, Screen.height * 0.04f), label);
+		if (tooltipVisible && tooltip != "") {
+			GUI.Box(new Rect(Screen.width / 3, Screen.height * 0.6f, Screen.width / 3, Screen.height * 0.04f), tooltip);
 		}
 	}
 }
