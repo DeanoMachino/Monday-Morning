@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject dirtyDishes;
 	public GameObject cleanDishes;
 	public GameObject workClothes;
+	public GameObject bowl2;
+	public GameObject spoon2;
+	public GameObject cereal2;
+	public GameObject milk2;
 
 	public bool tasksCompleted = false;
 
@@ -129,20 +133,18 @@ public class GameManager : MonoBehaviour {
 			break;
 		case Action.PLACED_BOWL:
 			gameObjectives.placedBowl = true;
-			// Set table bowl active
+			bowl2.SetActive (true);
 			StartPopupTimer ("Placed bowl on table");
 			break;
 		case Action.PLACED_SPOON:
 			gameObjectives.placedSpoon = true;
-			// Set table spoon active
+			spoon2.SetActive (true);
 			StartPopupTimer("Placed spoon on table");
 			break;
 		case Action.ATE_BREAKFAST:
 			gameObjectives.ateBreakfast = true;
-			// remove bowl
-			// remove spoon
-			// place cereal
-			// place milk
+			cereal2.SetActive (true);
+			milk2.SetActive (true);
 			StartPopupTimer ("Ate breakfast");
 			break;
 		case Action.WASHED_CLOTHES:
@@ -235,7 +237,7 @@ public class GameManager : MonoBehaviour {
 			keys = " - Find keys";
 		}
 
-		string objectivesText = "  TO DO by 8:30AM:\n" + shower + "\n" + dressed + "\n" + breakfast + "\n" + keys;
+		string objectivesText = "  TO DO by 9:00AM:\n" + shower + "\n" + dressed + "\n" + breakfast + "\n" + keys;
 
 		GUIStyle style = new GUIStyle();
 		style.alignment = TextAnchor.MiddleLeft;
