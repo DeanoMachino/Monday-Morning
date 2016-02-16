@@ -34,7 +34,7 @@ public class Timer : MonoBehaviour {
 	void ResetLevel()
 	{
 		// Call screen fader here and move player back to start
-		//screenFader.EndScene();
+		GameManager.Instance.EndScene(false);
 	}
 	
 	// Update is called once per frame
@@ -57,7 +57,7 @@ public class Timer : MonoBehaviour {
 			totalTimePassed = 0;
 
 			// Reset level here - Stuart
-			// ResetLevel();
+			ResetLevel();
 		}
 		
 	}
