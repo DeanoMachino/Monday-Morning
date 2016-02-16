@@ -9,6 +9,8 @@ public class ScreenFader : MonoBehaviour
 	public Image FadeImg;
 	public float fadeSpeed = 1.5f;
 	public bool sceneStarting = true;
+	public bool sceneEnding = false;
+	public int nextScene;
 
 	void Awake()
 	{
@@ -18,9 +20,12 @@ public class ScreenFader : MonoBehaviour
 	void Update()
 	{
 		// If the scene is starting...
-		if (sceneStarting)
+		if (sceneStarting) {
 			// ... call the StartScene function.
-			StartScene();
+			StartScene ();
+		} else if (sceneEnding) {
+			EndScene ();
+		}
 	}
 	
 	
@@ -56,7 +61,7 @@ public class ScreenFader : MonoBehaviour
 	}
 	
 	
-	public void EndScene(int SceneNumber)
+	public void EndScene()
 	{
 		// Make sure the RawImage is enabled.
 		FadeImg.enabled = true;
@@ -67,6 +72,6 @@ public class ScreenFader : MonoBehaviour
 		// If the screen is almost black...
 		if (FadeImg.color.a >= 0.95f)
 			// ... reload the level
-			Application.LoadLevel (SceneNumber);
+			Application.LoadLevel (nextScene);
 	}
 }   

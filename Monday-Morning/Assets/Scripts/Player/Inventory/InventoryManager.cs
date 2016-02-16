@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour {
 	}
 
 	// Receives message
-	void ItemPickedUp(ItemType type_){
+	public void ItemPickedUp(ItemType type_){
 		// Adds item to inventory list
 		if (itemList.Count < inventorySpaces) {
 			// Checks the item isn't already in the list
@@ -79,7 +79,7 @@ public class InventoryManager : MonoBehaviour {
 	}
 
 	// Receives message
-	void ItemDropped(ItemType type_){
+	public void ItemDropped(ItemType type_){
 		// Removes item from inventory list
 		if (itemList.Count > 0) {
 			// Loops backwards through the list and removes any items of the same type

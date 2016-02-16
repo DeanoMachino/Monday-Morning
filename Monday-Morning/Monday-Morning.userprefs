@@ -1,32 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Action\PlayerActivate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLogic\GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLogic\GameManager.cs" Line="194" Column="38" />
-      <File FileName="Assets\Scripts\Player\Action\PlayerActivate.cs" Line="257" Column="6" />
+      <File FileName="Assets\Scripts\GameLogic\GameManager.cs" Line="238" Column="45" />
+      <File FileName="Assets\Scripts\Player\Action\PlayerActivate.cs" Line="275" Column="66" />
+      <File FileName="Assets\Scripts\Player\Inventory\InventoryManager.cs" Line="84" Column="10" />
       <File FileName="Assets\Scripts\GameLogic\SetInitial.cs" Line="15" Column="9" />
+      <File FileName="Assets\Scripts\GUI\ScreenFader.cs" Line="13" Column="22" />
+      <File FileName="Assets\Scripts\GameLogic\Timer.cs" Line="39" Column="2" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Monday-Morning" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Environment" expanded="True" />
-                <Node name="GameLogic" expanded="True" />
-                <Node name="MainMenu" expanded="True" />
-                <Node name="Player" expanded="True">
-                  <Node name="Action" expanded="True">
-                    <Node name="PlayerActivate.cs" selected="True" />
-                  </Node>
-                  <Node name="Motion" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
