@@ -49,7 +49,9 @@ public class GameManager : MonoBehaviour {
 			Debug.Log("Tasks Completed");
 		}
 
+		// TEMP: Not for release -Dean
 		if(Input.GetKeyDown(KeyCode.C)){
+			// Not implemented fully yet -Dean
 			ResetDay();
 		}
 

@@ -11,7 +11,8 @@ public class ToggleCursor : MonoBehaviour {
 	void Update () {
 		if(Input.GetButtonDown("ToggleCursor")){
 			activated = !activated;
-			Cursor.visible = activated;
 		}
+
+		Cursor.visible = activated;
 	}
 }
